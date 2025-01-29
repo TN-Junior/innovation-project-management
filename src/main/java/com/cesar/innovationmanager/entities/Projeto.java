@@ -1,13 +1,14 @@
 package com.cesar.innovationmanager.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,4 +26,15 @@ public class Projeto {
     private String descricao;
 
     private String status;
+
+    private LocalDateTime dataInicio;
+
+    private LocalDateTime dataFim;
+
+    private BigDecimal orcamento;
+
+    private String liderProjeto;
+
+    @ElementCollection
+    private List<String> integrantes;
 }
