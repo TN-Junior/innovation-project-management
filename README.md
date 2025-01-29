@@ -51,7 +51,7 @@ mvn spring-boot:run
 ```
 A aplicação estará disponível em:
 ```
-http://localhost:8080
+http://localhost:8081
 ```
 
 ## 📌 Endpoints da API
@@ -88,8 +88,10 @@ http://localhost:8080
 ## 📜 Documentação com Swagger
 Após iniciar o projeto, acesse:
 ```
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8081/swagger-ui/index.html
 ```
+![image](https://github.com/user-attachments/assets/eaccaf31-19b6-4b57-b7d2-325d7767d720)
+
 
 ## ✅ Melhorias Futuras
 - 🚀 Autenticação JWT
@@ -99,5 +101,4 @@ http://localhost:8080/swagger-ui/index.html
 ## 📌 Contribuição
 Se desejar contribuir, faça um **fork** do repositório e envie um **pull request**. 🚀
 
-## 📄 Licença
-Este projeto é distribuído sob a licença MIT.
+
