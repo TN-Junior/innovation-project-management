@@ -8,7 +8,7 @@
 - **Spring Boot 3**
 - **Spring Data JPA**
 - **Spring Web**
-- **PostgreSQL**
+- **H2** 
 - **Lombok**
 - **Springdoc OpenAPI (Swagger)**
 
