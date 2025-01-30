@@ -2,6 +2,7 @@ package com.cesar.innovationmanager.services;
 
 import com.cesar.innovationmanager.dtos.ProjetoDTO;
 import com.cesar.innovationmanager.entities.Projeto;
+import com.cesar.innovationmanager.entities.StatusProjeto;
 import com.cesar.innovationmanager.repositories.ProjetoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -40,12 +43,14 @@ public class ProjetoService {
 
         projeto.setNome(projetoDTO.nome());
         projeto.setDescricao(projetoDTO.descricao());
-        projeto.setStatus(projetoDTO.status());
+        projeto.setStatus(StatusProjeto.valueOf(projetoDTO.status().toUpperCase()));
         projeto.setDataInicio(projetoDTO.dataInicio());
         projeto.setDataFim(projetoDTO.dataFim());
         projeto.setOrcamento(projetoDTO.orcamento());
         projeto.setLiderProjeto(projetoDTO.liderProjeto());
-        projeto.setIntegrantes(projetoDTO.integrantes());
+        projeto.setIntegrantes(Optional.ofNullable(projetoDTO.integrantes())
+                .map(HashSet::new)
+                .orElse(new HashSet<>()));
 
         return toDTO(projetoRepository.save(projeto));
     }
@@ -65,13 +70,22 @@ public class ProjetoService {
 
     private ProjetoDTO toDTO(Projeto projeto) {
         return new ProjetoDTO(projeto.getId(), projeto.getNome(), projeto.getDescricao(),
-                projeto.getStatus(), projeto.getDataInicio(), projeto.getDataFim(),
-                projeto.getOrcamento(), projeto.getLiderProjeto(), projeto.getIntegrantes());
+                projeto.getStatus().name(), projeto.getDataInicio(), projeto.getDataFim(),
+                projeto.getOrcamento(), projeto.getLiderProjeto(), new ArrayList<>(projeto.getIntegrantes())
+        );
     }
 
     private Projeto toEntity(ProjetoDTO dto) {
-        return new Projeto(dto.id(), dto.nome(), dto.descricao(),
-                dto.status(), dto.dataInicio(), dto.dataFim(),
-                dto.orcamento(), dto.liderProjeto(), dto.integrantes());
-    }
+        return new Projeto(
+                dto.id(),
+                dto.nome(),
+                dto.descricao(),
+                dto.status() != null ? StatusProjeto.valueOf(dto.status().toUpperCase()) : StatusProjeto.RASCUNHO,
+                dto.dataInicio(),
+                dto.dataFim(),
+                dto.orcamento(),
+                dto.liderProjeto(),
+                dto.integrantes() !=null ? new HashSet<>(dto.integrantes()) : new HashSet<>()
+                );
+        }
 }
