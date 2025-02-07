@@ -3,7 +3,7 @@
 ## 📌 Visão Geral
 **Innovation Project Manager** é um sistema para gerenciar projetos de inovação, desenvolvido com **Spring Boot**. O objetivo é facilitar o acompanhamento de projetos, atribuição de equipes e monitoramento de progresso.
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - **Java 17**
 - **Spring Boot 3**
 - **Spring Data JPA**
@@ -93,12 +93,7 @@ http://localhost:8081/swagger-ui/index.html
 ![image](https://github.com/user-attachments/assets/eaccaf31-19b6-4b57-b7d2-325d7767d720)
 
 
-## ✅ Melhorias Futuras
-- 🚀 Autenticação JWT
-- 📊 Dashboard com métricas
-- 🔗 Integração com Slack para notificações
 
-## 📌 Contribuição
-Se desejar contribuir, faça um **fork** do repositório e envie um **pull request**. 🚀
+
 
 
