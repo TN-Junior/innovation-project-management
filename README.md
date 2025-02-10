@@ -1,6 +1,6 @@
 # Innovation Project Manager - CESAR
 
-## 📌 Visão Geral
+## Visão Geral
 **Innovation Project Manager** é um sistema para gerenciar projetos de inovação, desenvolvido com **Spring Boot**. O objetivo é facilitar o acompanhamento de projetos, atribuição de equipes e monitoramento de progresso.
 
 ## Tecnologias Utilizadas
@@ -29,7 +29,7 @@ innovation-manager/
 └── README.md
 ```
 
-## ⚙️ Configuração do Ambiente
+## Configuração do Ambiente
 ### **1. Pré-requisitos**
 - **JDK 17 ou superior**
 - **Maven**
@@ -45,7 +45,7 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ```
 
 
-## 📌 Endpoints da API
+## Endpoints da API
 ### **1. Criar um Projeto**
 `POST /projetos`
 ```json
@@ -76,7 +76,7 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ### **6. Filtrar Projetos por Status**
 `GET /projetos/status/{status}`
 
-## 📜 Documentação com Swagger
+## Documentação com Swagger
 Após iniciar o projeto, acesse:
 ```
 http://localhost:8081/swagger-ui/index.html
