@@ -44,15 +44,6 @@ spring.datasource.password=sua_senha
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ```
 
-### **3. Rodando o Projeto**
-No terminal, execute:
-```sh
-mvn spring-boot:run
-```
-A aplicação estará disponível em:
-```
-http://localhost:8081
-```
 
 ## 📌 Endpoints da API
 ### **1. Criar um Projeto**
