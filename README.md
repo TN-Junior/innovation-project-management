@@ -12,7 +12,7 @@
 - **Lombok**
 - **Springdoc OpenAPI (Swagger)**
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 ```
 innovation-manager/
 ├── src/main/java/com/cesar/innovationmanager
